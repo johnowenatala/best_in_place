@@ -151,7 +151,7 @@ module BestInPlace
 
       deprecations.each do |deprecation|
         if deprecated_option = opts.delete(deprecation[:from])
-          opts[deprecation[:from]] = deprecated_option
+          opts[deprecation[:to]] = deprecated_option
           ActiveSupport::Deprecation.warn("[Best_in_place] :#{deprecation[:from]} is deprecated in favor of :#{deprecation[:to]} ")
         end
       end
